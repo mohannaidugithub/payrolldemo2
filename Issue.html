@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://www.belrium.io/lib/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <!--pdf Javascript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+  <!--end pdf javascript-->
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<!-- Navbar -->
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <a class="navbar-brand">
+          <img src="https://www.belrium.io/lib/img/logo.png" alt="Belrium logo">
+        </a>
+        
+<div id="mySidebar" class="sidebar"> 
+  <a href="javascript:void(0)" class="closebtn pull-right" onclick="closeNav()">×</a>
+  <a href="home.html">Home </a>
+  <a href="Wallet.html">Wallet </a>
+  <a href="KYCDashboard.html">KYC</a>
+  <a href="Issue.html">Issue</a>
+  <a href="Issued.html">Issued</a>
+  <a href="Signin.html">Signin</a>
+  <a href="Signup.html">Signup</a>
+</div>
+</nav>
+</div><br><br><br>
+
+<!--Body-->
+<body style="background-color:#ffffff">  
+  <div class="container-fluid" >
+      <div id="main pull-right">
+          <button class="openbtn" onclick="openNav()">☰ </button>  
+      </div>
+        <div class="col-md-6">
+          <form form-horizontal>
+            <div class="well clearfix">
+              <div class="form-group">
+<h3><b> ISSUE CERTIFICATE</b></h3>
+<div class="form-group">
+    <label class="control-label col-sm-3" for="l">EMAIL:</label>
+    <div class="col-sm-8">
+  <input type="email" class="form-control" id="txtemail" placeholder="Enter email" onclick="functionName('txtemployee','email')">
+    </div>
+  </div>
+  <div class="form-group">
+      <label class="control-label col-sm-3" for="">EMPLOYEEID:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="txtemployeeid" placeholder="EmployeeID" onclick="functionName('txtemployee','employeeid')">
+      </div>
+  </div>
+  <div class="form-group">
+        <label class="control-label col-sm-3" for="">NAME:</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="txtname" placeholder="Name" onclick="functionName('txtemployee','name')">
+        </div>
+  </div>
+  <div class="form-group">
+      <label class="control-label col-sm-3" for="">DESIGNATION:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="txtdesignation" placeholder="Designation" onclick="functionName('txtdesignation','designation')">
+      </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="">ACTUALSALARY:</label>
+    <div class="col-sm-8">
+      <input type="number" class="form-control" id="txtactualsalary" placeholder="Actualsalary" onclick="functionName('txtactualsalary','actualsalary')">
+    </div>
+</div>
+  
+<div class="form-group">
+    <label class="control-label col-sm-3" for="">MONTH:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="txtmonth" placeholder="Month" onclick="functionName('txtmonth','month')">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-3" for="">YEAR:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="txtyear" placeholder="Year" onclick="functionName('txtyear','year')">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-3" for="">LOSSOFPAY:</label>
+    <div class="col-sm-8">
+      <input type="number" class="form-control" id="txtlossofpay" placeholder="Loss of pay" onclick="functionName('txtlossofpay','lossofpay')">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-3" for="">PENDINGAMT:</label>
+    <div class="col-sm-8">
+      <input type="number" class="form-control" id="txtpendingamt" placeholder="Peding amt" onclick="functionName('txtpendingamt','pendingamt')">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-3" for="">PFDEDUCTION:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="txtpfdeduction" placeholder="PF deduction" onclick="functionName('txtpfdeduction','pfdeduction')">
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-sm-3" for="">TDSDEDUCTION:</label>
+  <div class="col-sm-8">
+    <input type="text" class="form-control" id="txttdsdeduction" placeholder="Tds deduction" onclick="functionName('txttdsdeduction','tdsdeduction')">
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-3" for="">REIMBERSMENT:</label>
+  <div class="col-sm-8">
+    <input type="text" class="form-control" id="txtreimbersment" placeholder="Reimbersment" onclick="functionName('txtreimbersment','reimbursment')">
+  </div>
+</div>
+
+
+
+      <script>
+      function test(){
+              var DAPP_ID = '27566d2d1464d1ca9964662027c4ac317bf3d6fcd1f23dc97ecabd1975b8dd09';
+              //  window.location.pathname.split('/')[2];
+               
+        //      console.log("DAPP_ID: "+DAPP_ID);
+      //         var DAPP_ID = window.location.pathname.split('/')[2];
+             // var BASE_URL = '/api/dapps/' + DAPP_ID;
+             var BASE_URL = 'http://localhost:9305/api/dapps/' + DAPP_ID;
+      
+      //ddress,name,id,university,coursename,date,certid
+              var email = document.getElementById("txtemail").value;
+              var employeeid = document.getElementById("txtemployeeid").value;
+              var name = document.getElementById("txtname").value;
+              var designation = document.getElementById("txtdesignation").value;
+              var actualsalary = document.getElementById("txtactualsalary").value;
+              var month = document.getElementById("txtmonth").value;
+              var year = document.getElementById("txtyear").value;
+              var lossofpay = document.getElementById("txtlossofpay").value;
+              var pendingamt = document.getElementById("txtpendingamt").value;
+              var Pfdeduction = document.getElementById("txtpfdeduction").value;
+              var Tdsdeduction = document.getElementById("txttdsdeduction").value;
+              var Reimbursment = document.getElementById("txtreimbursment").value;
+              
+      
+               //  var secode=window.prompt("Secret Code");
+              
+              // console.log("secret code: "+secode);
+              // var fee = '10000000';
+              // console.log("email   :"+email);
+              // var args = JSON.stringify([name,employeeid,payscale]);
+              // console.log("args   :"+args);
+      
+              var data = {
+                    secret: secret,
+                    fee: fee,
+                    type: 1000, 
+                    //              args: JSON.stringify([name,course1,university,DOI1])
+                    args: JSON.parse([name,employeeid])
+                  
+                  }
+           $.ajax({
+                    type: 'PUT',
+                    url: BASE_URL + '/transactions/unsigned',
+                    data: data,
+                    dataType: 'json',
+                    success: function(ret) {
+                        console.log(ret);
+                        if (!ret.success) {
+                            alert('Error: ' + ret.error);
+                            return;
+                        }
+                        alert("Success! " + ret.transactionId);
+                    }});
+      //alert("test" + id);
+      }
+      
+      /*function studentname(){
+        $('#txtstudent').keyup(function () {
+        $('#display').text($(this).val());
+      });
+      }*/
+      
+      function functionName(inputID, displayID){
+        $('#'+inputID).keyup(function () {
+        $('#'+displayID).text($(this).val());
+      });
+      }
+      
+       function ShowData() {
+                       $.ajax({
+                    type: 'GET',
+                    url: BASE_URL + '/payroll/:Issue',
+                    dataType: 'json',
+                    success: function(ret) {
+                        console.log(ret);
+                        if (!ret.success) {
+                            alert('Error: ' + ret.error);
+                            return;
+                        }
+                        alert("Success! " + ret.transactionId);
+                        displaycertificate(ret);
+                        console.log(ret);
+                      }
+                  });
+      
+                  }
+      
+      function displaycertificate(ret){
+            a// rgs: JSON.stringify(email,employeeid,name,designation,actualsalary,month,year,lossofpay,pendingamt,ptdeduction,tdsdeduction,Reimbursment)
+              var tblRow = "<tr>"  + "<td>" + ret.email + "</td>" + "<td>" + ret.employeeid + "</td>" + "<td>" + ret.name + "</td>" 
+              + "<td>" + ret.designation + "</td>" + "<td>" + ret.actualsalary + "</td>" + "<td>" + ret.month + "</td>" + "<td>"
+               + ret.year + "</td>" + "<td>" + ret.lossofpay + "</td>" + "<td>" + ret.pendingamt + "</td>" +
+                "<td>" + ret.ptdeduction + "</td>" + "<td>" + ret.tdsdeduction + "</td>" + "<td>" + ret.reimbursment + "</td>"
+                  + "</tr>";
+                 $(tblRow).appendTo("#userdata tbody");
+           }
+      
+      </script>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <div style="width:600px; height:500px; padding:20px; text-align:center; border: 1px solid #000000">
+                   <span style="font-size:20px;">BELFRICS BT PVT.LTD. PAYSLIP</span>
+                   <br>
+                   <span style="font-size:15px">NAME:</span><br>
+                   <span style="font-size:20px" id="display"></span>
+                   <span style="font-size:15px">EMPLOYEE ID:</span> <br>
+                   <span style="font-size:20px" id="txtemployeeid"></span><br>
+                   <span style="font-size:15px">PAY: </span> <br>
+                   <span style="font-size:20px" id="pay"></span>
+                   <span style="font-size:15px">PAYSCALE: </span> <br>
+                   <span style="font-size:20px" id="email"></span> <br>
+                   <!--Certificate Table-->
+                   <table class="table table-bordered table-striped">
+        
+                      <thead>
+                          <tr>
+                              <th>EARNING</th>
+                              <th>AMOUNT</th>
+                              <th>DEDUCTION</th>
+                              <th>AMOUNT</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>BASIC SALARY</td>
+                              <td></td>
+                              <td>TAX</td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td></td>
+                              <td></td>
+                              <td>UIF</td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td></td>
+                              <td></td>
+                              <td>OTHERS</td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td></td>
+                              <td></td>
+                              <td>TOTAL</td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td>GROSS EARNING</td>
+                              <td></td>
+                              <td>TOTAL</td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td></td>
+                              <td></td>
+                              <td>NET SALARY</td>
+                              <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                   <!--End of Certificate Table-->
+            </div>
+            </div>
+            </div>
+            <div class="container">
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn" data-toggle="modal" data-target="#myModal">Issue Cert</button>
+              
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <p> Are you sureyou want to issue this certificate</p><br>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" data="modal">Issue</button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+
+            <br>
+            
+            
+            <!-- <script language="javascript">
+      
+          function  postData(){
+      //alert("hi");
+              var DAPP_ID = window.location.pathname.split('/')[2];
+              console.log("DAPP_ID: "+DAPP_ID);
+              var BASE_URL = '/api/dapps/' + DAPP_ID;
+              var date1   = document.getElementById("txtdate").value;
+              var id    = document.getElementById("txtstudent").value;
+              var course1 = document.getElementById("txtcourse").value;
+              var university = document.getElementById("txtuniversity").value;
+              var DOI1    = document.getElementById("txtDOI").value;
+              var secret  = document.getElementById("txtsecret").value;
+              var inst1   = document.getElementById("txtinst").value;
+              var EID1   = document.getElementById("txtEID").value;
+            //var args = $('#contractArgs').val().split('\n')
+            //"args": "[\"abcdj\",\"ridd\",\"widd\",\"sidd\",\"didd\"]",
+      //      recipientAddress, name, enrollmentId, major, institute
+                var fee = '10000000';
+                var data = {
+                    secret: secret,
+                    fee: fee,
+                    type: 1000, 
+      //              args: JSON.stringify(date1,id,course1,university,DOI1)
+                    args: JSON.stringify(date1,id,course1,university,EID1)
+      
+                  }
+                console.log('invoke', data)
+                $.ajax({
+                    type: 'PUT',
+                    url: BASE_URL + '/transactions/unsigned',
+                    data: data,
+                    dataType: 'json',
+                    success: function(ret) {
+                        console.log(ret);
+                        if (!ret.success) {
+                            alert('Error: ' + ret.error);
+                            return;
+                        }
+                        alert("Success! " + ret.transactionId);
+                    }});
+      
+          }
+      
+            //  var EID2   = document.getElementById("txtEID").value;
+           var EID2 =  "1" ;
+         
+           function Verify(ret){
+              <p> University details </p>
+             var tblRow = "<tr>" + "<td>" + ret.date1 + "</td>" +
+                 "<td>" + ret.id + "</td>" + "<td>" + ret.course1 + "</td>" + "<td>" + ret.university + "</td>" + "</tr>"
+      
+                 $(tblRow).appendTo("#userdata tbody");
+           }
+      
+      //get the unersity
+      
+           }
+      
+      
+      
+        </script> -->
+<!-- Navigation Script -->
+        <script>
+          function openNav() {
+              document.getElementById("mySidebar").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+          }
+          
+          function closeNav() {
+              document.getElementById("mySidebar").style.width = "0";
+              document.getElementById("main").style.marginLeft= "0";
+          }
+          </script>
+<!-- End of the Navigation Script -->
+      
+      
+        <script src="js/jspdf.js"></script>
+        <script src="js/pdfFromHTML.js"></script>
+        <script src="js/bindDatePicker.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+<!-- Footer -->
+<div class="footer">
+  <p> Copyright @2018 Belrium. All rights reserved</p>
+</div>
+<!-- End of footer-->
+</html>
+      
